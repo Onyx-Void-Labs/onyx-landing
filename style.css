@@ -397,7 +397,7 @@ nav.scrolled .nav-cta {
     font-size: 0.7rem;
     font-weight: 500;
     color: var(--text-muted);
-    cursor: default;
+    cursor: pointer;
     transition: var(--transition);
 }
 
@@ -422,8 +422,31 @@ nav.scrolled .nav-cta {
 }
 
 .pw-body {
-    display: flex;
+    position: relative;
     min-height: 320px;
+    overflow: hidden;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.pw-slide {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.pw-slide.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .pw-sidebar {
@@ -641,23 +664,7 @@ nav.scrolled .nav-cta {
     margin-bottom: 16px;
 }
 
-.f-preview {
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    margin-bottom: 16px;
-}
 
-.f-preview img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.f-card:hover .f-preview img {
-    transform: scale(1.03);
-}
 
 .f-status {
     display: inline-block;
@@ -733,9 +740,26 @@ nav.scrolled .nav-cta {
     align-items: start;
 }
 
+/* Per-card plan colors — Starter=zinc, Basic=emerald, Pro=blue, Ultra=purple */
+.p-card[style*="--plan-color: #a1a1aa"] {
+    border-color: rgba(161, 161, 170, 0.25);
+}
+
+.p-card[style*="--plan-color: #34d399"] {
+    border-color: rgba(52, 211, 153, 0.25);
+}
+
+.p-card[style*="--plan-color: #60a5fa"] {
+    border-color: rgba(96, 165, 250, 0.25);
+}
+
+.p-card[style*="--plan-color: #a855f7"] {
+    border-color: rgba(168, 85, 247, 0.25);
+}
+
 .p-card {
     background: var(--bg-card);
-    border: 1px solid color-mix(in srgb, var(--plan-color, #a1a1aa) 20%, transparent);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius);
     padding: 32px 24px;
     transition: all var(--transition);
@@ -751,36 +775,48 @@ nav.scrolled .nav-cta {
     right: 0;
     height: 2px;
     background: var(--plan-color, var(--purple));
-    opacity: 0;
-    transition: opacity var(--transition);
+    border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .p-card:hover {
-    border-color: color-mix(in srgb, var(--plan-color, #a1a1aa) 45%, transparent);
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
-        0 0 20px color-mix(in srgb, var(--plan-color, #a1a1aa) 8%, transparent);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-.p-card:hover::before {
-    opacity: 1;
+.p-card[style*="--plan-color: #a1a1aa"]:hover {
+    border-color: rgba(161, 161, 170, 0.45);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(161, 161, 170, 0.08);
+}
+
+.p-card[style*="--plan-color: #34d399"]:hover {
+    border-color: rgba(52, 211, 153, 0.45);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(52, 211, 153, 0.08);
+}
+
+.p-card[style*="--plan-color: #60a5fa"]:hover {
+    border-color: rgba(96, 165, 250, 0.45);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(96, 165, 250, 0.08);
+}
+
+.p-card[style*="--plan-color: #a855f7"]:hover {
+    border-color: rgba(168, 85, 247, 0.45);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(168, 85, 247, 0.08);
 }
 
 .p-card.featured {
-    border-color: color-mix(in srgb, var(--plan-color, #a855f7) 35%, transparent);
+    border-color: rgba(168, 85, 247, 0.35);
     background: linear-gradient(180deg, rgba(168, 85, 247, 0.06) 0%, var(--bg-card) 60%);
     box-shadow: 0 0 40px rgba(168, 85, 247, 0.08);
     padding-top: 28px;
 }
 
 .p-card.featured:hover {
-    border-color: color-mix(in srgb, var(--plan-color, #a855f7) 55%, transparent);
+    border-color: rgba(168, 85, 247, 0.55);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
         0 0 30px rgba(168, 85, 247, 0.15);
 }
 
 .p-card.featured::before {
-    opacity: 1;
     background: linear-gradient(90deg, var(--purple-dark), var(--purple));
     height: 3px;
 }
@@ -796,7 +832,6 @@ nav.scrolled .nav-cta {
     padding: 4px 14px;
     border-radius: 100px;
     margin-bottom: 14px;
-    text-align: center;
 }
 
 .p-icon-wrap {

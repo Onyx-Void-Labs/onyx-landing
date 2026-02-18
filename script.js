@@ -181,10 +181,20 @@
     // ─── App Preview Tab Switching ───
     function setupPreviewTabs() {
         const tabs = document.querySelectorAll('.pw-tab');
+        const slides = document.querySelectorAll('.pw-slide');
+
         tabs.forEach((tab) => {
             tab.addEventListener('click', () => {
+                const target = tab.getAttribute('data-tab');
+
+                // Switch active tab
                 tabs.forEach((t) => t.classList.remove('active'));
                 tab.classList.add('active');
+
+                // Switch active slide
+                slides.forEach((s) => s.classList.remove('active'));
+                const activeSlide = document.querySelector(`.pw-slide[data-tab="${target}"]`);
+                if (activeSlide) activeSlide.classList.add('active');
             });
         });
     }
