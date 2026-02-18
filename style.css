@@ -641,6 +641,24 @@ nav.scrolled .nav-cta {
     margin-bottom: 16px;
 }
 
+.f-preview {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+}
+
+.f-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.f-card:hover .f-preview img {
+    transform: scale(1.03);
+}
+
 .f-status {
     display: inline-block;
     font-size: 0.7rem;
@@ -717,7 +735,7 @@ nav.scrolled .nav-cta {
 
 .p-card {
     background: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in srgb, var(--plan-color, #a1a1aa) 20%, transparent);
     border-radius: var(--radius);
     padding: 32px 24px;
     transition: all var(--transition);
@@ -738,9 +756,10 @@ nav.scrolled .nav-cta {
 }
 
 .p-card:hover {
-    border-color: var(--plan-color, rgba(255, 255, 255, 0.12));
+    border-color: color-mix(in srgb, var(--plan-color, #a1a1aa) 45%, transparent);
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px color-mix(in srgb, var(--plan-color, #a1a1aa) 8%, transparent);
 }
 
 .p-card:hover::before {
@@ -748,10 +767,16 @@ nav.scrolled .nav-cta {
 }
 
 .p-card.featured {
-    border-color: rgba(168, 85, 247, 0.3);
+    border-color: color-mix(in srgb, var(--plan-color, #a855f7) 35%, transparent);
     background: linear-gradient(180deg, rgba(168, 85, 247, 0.06) 0%, var(--bg-card) 60%);
     box-shadow: 0 0 40px rgba(168, 85, 247, 0.08);
     padding-top: 28px;
+}
+
+.p-card.featured:hover {
+    border-color: color-mix(in srgb, var(--plan-color, #a855f7) 55%, transparent);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(168, 85, 247, 0.15);
 }
 
 .p-card.featured::before {
@@ -771,6 +796,7 @@ nav.scrolled .nav-cta {
     padding: 4px 14px;
     border-radius: 100px;
     margin-bottom: 14px;
+    text-align: center;
 }
 
 .p-icon-wrap {
