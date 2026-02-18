@@ -717,7 +717,7 @@ nav.scrolled .nav-cta {
 
 .p-card {
     background: var(--bg-card);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius);
     padding: 32px 24px;
     transition: all var(--transition);
@@ -738,8 +738,9 @@ nav.scrolled .nav-cta {
 }
 
 .p-card:hover {
-    border-color: var(--border-hover);
+    border-color: var(--plan-color, rgba(255, 255, 255, 0.12));
     transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .p-card:hover::before {
@@ -747,9 +748,10 @@ nav.scrolled .nav-cta {
 }
 
 .p-card.featured {
-    border-color: rgba(168, 85, 247, 0.25);
-    background: linear-gradient(180deg, rgba(168, 85, 247, 0.05) 0%, var(--bg-card) 50%);
-    box-shadow: 0 0 40px var(--plan-glow, rgba(168, 85, 247, 0.1));
+    border-color: rgba(168, 85, 247, 0.3);
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.06) 0%, var(--bg-card) 60%);
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.08);
+    padding-top: 28px;
 }
 
 .p-card.featured::before {
@@ -759,18 +761,16 @@ nav.scrolled .nav-cta {
 }
 
 .p-badge {
-    position: absolute;
-    top: -11px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: inline-block;
     background: linear-gradient(135deg, var(--purple-dark), var(--purple));
     color: #fff;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     padding: 4px 14px;
     border-radius: 100px;
+    margin-bottom: 14px;
 }
 
 .p-icon-wrap {
