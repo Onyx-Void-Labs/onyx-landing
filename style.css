@@ -722,6 +722,19 @@ nav.scrolled .nav-cta {
     padding: 32px 24px;
     transition: all var(--transition);
     position: relative;
+    overflow: hidden;
+}
+
+.p-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--plan-color, var(--purple));
+    opacity: 0;
+    transition: opacity var(--transition);
 }
 
 .p-card:hover {
@@ -729,20 +742,20 @@ nav.scrolled .nav-cta {
     transform: translateY(-4px);
 }
 
+.p-card:hover::before {
+    opacity: 1;
+}
+
 .p-card.featured {
     border-color: rgba(168, 85, 247, 0.25);
-    background: linear-gradient(180deg, rgba(168, 85, 247, 0.04) 0%, var(--bg-card) 100%);
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.05) 0%, var(--bg-card) 50%);
+    box-shadow: 0 0 40px var(--plan-glow, rgba(168, 85, 247, 0.1));
 }
 
 .p-card.featured::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
+    opacity: 1;
     background: linear-gradient(90deg, var(--purple-dark), var(--purple));
-    border-radius: var(--radius) var(--radius) 0 0;
+    height: 3px;
 }
 
 .p-badge {
@@ -760,10 +773,24 @@ nav.scrolled .nav-cta {
     border-radius: 100px;
 }
 
+.p-icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--plan-glow, rgba(168, 85, 247, 0.1));
+    border: 1px solid color-mix(in srgb, var(--plan-color) 15%, transparent);
+    color: var(--plan-color, var(--purple));
+    margin-bottom: 16px;
+}
+
 .p-card h3 {
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 8px;
+    color: var(--plan-color, var(--text));
 }
 
 .p-price {
@@ -806,7 +833,7 @@ nav.scrolled .nav-cta {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--purple);
+    background: var(--plan-color, var(--purple));
     opacity: 0.4;
 }
 
