@@ -811,10 +811,10 @@ nav.scrolled .nav-cta {
         0 0 30px rgba(168, 85, 247, 0.15);
 }
 
-.p-card.featured::before {
+/* .p-card.featured::before {
     background: linear-gradient(90deg, var(--purple-dark), var(--purple));
     height: 3px;
-}
+} */
 
 .p-badge {
     display: inline-block;
