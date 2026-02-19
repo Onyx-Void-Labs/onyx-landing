@@ -1,1 +1,0 @@
-import{w as t,x as o}from"./index-Cr0duTvh.js";async function u(n){return await t("plugin:oauth|start",{config:n})}async function i(n){await t("plugin:oauth|cancel",{port:n})}function l(n){return o("oauth://url",a=>{n(a.payload)})}function c(n){return o("oauth://invalid-url",a=>{n(a.payload)})}export{i as cancel,c as onInvalidUrl,l as onUrl,u as start};
