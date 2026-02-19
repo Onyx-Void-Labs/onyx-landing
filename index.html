@@ -96,66 +96,12 @@
             <div class="preview-window">
                 <div class="pw-bar">
                     <div class="pw-dots"><span></span><span></span><span></span></div>
-                    <div class="pw-tabs">
-                        <span class="pw-tab active" data-tab="notes" data-color="purple">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M12 20h9" />
-                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-                            </svg>
-                            Notes
-                        </span>
-                        <span class="pw-tab" data-tab="vault" data-color="purple">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
-                            </svg>
-                            Vault
-                        </span>
-                        <span class="pw-tab" data-tab="cloud" data-color="blue">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <polyline points="16 16 12 12 8 16" />
-                                <line x1="12" y1="12" x2="12" y2="21" />
-                                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />
-                            </svg>
-                            Cloud
-                        </span>
-                        <span class="pw-tab" data-tab="messages" data-color="blue">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                            </svg>
-                            Messages
-                        </span>
-                        <span class="pw-tab" data-tab="calendar" data-color="green">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>
-                            Calendar
-                        </span>
-                        <span class="pw-tab" data-tab="email" data-color="amber">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                <polyline points="22,6 12,13 2,6" />
-                            </svg>
-                            Email
-                        </span>
-                    </div>
+                    <!-- Tabs removed for live demo -->
                 </div>
-                <div class="pw-body">
-                    <img class="pw-slide active" data-tab="notes" src="assets/Notes.png" alt="Onyx Notes">
-                    <img class="pw-slide" data-tab="vault" src="assets/Vault.png" alt="Onyx Vault">
-                    <img class="pw-slide" data-tab="cloud" src="assets/Cloud.png" alt="Onyx Cloud">
-                    <img class="pw-slide" data-tab="messages" src="assets/Messages.png" alt="Onyx Messages">
-                    <img class="pw-slide" data-tab="calendar" src="assets/Calendar.png" alt="Onyx Calendar">
-                    <img class="pw-slide" data-tab="email" src="assets/Email.png" alt="Onyx Email">
+                <div class="pw-body" style="height: 100%; display: flex; flex-direction: column;">
+                    <iframe src="demo/index.html"
+                        style="width: 100%; height: 600px; border: none; border-radius: 0 0 12px 12px;"
+                        title="Onyx Demo"></iframe>
                 </div>
             </div>
         </section>
@@ -205,7 +151,7 @@
                     <h3>Cloud Sync</h3>
                     <p>Real-time encrypted sync across every device. Your data travels through a stateless relay — no
                         logs, no metadata.</p>
-                    <div class="f-preview"><img src="assets/Cloud.png" alt="Onyx Cloud Sync" loading="lazy"></div>
+
                     <span class="f-status live">Available Now</span>
                 </div>
                 <div class="f-card reveal" style="--accent: #3b82f6;">
@@ -217,7 +163,7 @@
                     </div>
                     <h3>Messages</h3>
                     <p>Signal-level encrypted messaging with servers, channels, and voice — all private by default.</p>
-                    <div class="f-preview"><img src="assets/Messages.png" alt="Onyx Messages" loading="lazy"></div>
+
                     <span class="f-status soon">Coming Soon</span>
                 </div>
                 <div class="f-card reveal" style="--accent: #22c55e;">
@@ -232,7 +178,7 @@
                     </div>
                     <h3>Calendar</h3>
                     <p>Schedule, agenda, and task tracking — encrypted end-to-end and synced across your workspace.</p>
-                    <div class="f-preview"><img src="assets/Calendar.png" alt="Onyx Calendar" loading="lazy"></div>
+
                     <span class="f-status soon">Coming Soon</span>
                 </div>
                 <div class="f-card reveal" style="--accent: #f59e0b;">
@@ -246,7 +192,7 @@
                     <h3>Email</h3>
                     <p>Private IMAP &amp; SMTP with client-side encryption via Rust backend. Your inbox, truly yours.
                     </p>
-                    <div class="f-preview"><img src="assets/Email.png" alt="Onyx Email" loading="lazy"></div>
+
                     <span class="f-status soon">Coming Soon</span>
                 </div>
             </div>
