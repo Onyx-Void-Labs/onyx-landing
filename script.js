@@ -225,10 +225,7 @@
             const iframe = document.createElement("iframe");
             iframe.src = "demo/index.html";
             iframe.title = "Onyx Demo";
-            iframe.style.width = "100%";
-            iframe.style.height = "600px";
-            iframe.style.border = "none";
-            iframe.style.borderRadius = "12px";
+            iframe.className = "demo-iframe";
             container.appendChild(iframe);
 
             ['mousemove', 'touchstart', 'keydown', 'click'].forEach(e => {

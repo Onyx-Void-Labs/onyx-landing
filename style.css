@@ -1175,21 +1175,74 @@ footer {
         font-size: 2rem;
     }
 }
+
 /* Utility Classes for Strict CSP */
-.mb-40 { margin-bottom: 40px; }
-.mb-0 { margin-bottom: 0; }
-.demo-container-layout { height: 100%; display: flex; flex-direction: column; }
-.enterprise-header-layout { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.demo-container-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.enterprise-header-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
 
 /* Dynamic Accent Colors */
-.accent-purple { --accent: var(--purple-dark, #a855f7); }
-.accent-cyan { --accent: var(--cyan, #06b6d4); }
-.accent-blue { --accent: var(--blue, #3b82f6); }
-.accent-green { --accent: var(--green, #22c55e); }
-.accent-amber { --accent: var(--amber, #f59e0b); }
+.accent-purple {
+    --accent: var(--purple-dark, #a855f7);
+}
+
+.accent-cyan {
+    --accent: var(--cyan, #06b6d4);
+}
+
+.accent-blue {
+    --accent: var(--blue, #3b82f6);
+}
+
+.accent-green {
+    --accent: var(--green, #22c55e);
+}
+
+.accent-amber {
+    --accent: var(--amber, #f59e0b);
+}
 
 /* Plan Colors */
-.plan-basic { --plan-color: #a1a1aa; --plan-glow: rgba(161, 161, 170, 0.15); }
-.plan-pro { --plan-color: #34d399; --plan-glow: rgba(52, 211, 153, 0.15); }
-.plan-lifetime { --plan-color: #60a5fa; --plan-glow: rgba(96, 165, 250, 0.15); }
-.plan-enterprise { --plan-color: #a855f7; --plan-glow: rgba(168, 85, 247, 0.2); }
+.plan-basic {
+    --plan-color: #a1a1aa;
+    --plan-glow: rgba(161, 161, 170, 0.15);
+}
+
+.plan-pro {
+    --plan-color: #34d399;
+    --plan-glow: rgba(52, 211, 153, 0.15);
+}
+
+.plan-lifetime {
+    --plan-color: #60a5fa;
+    --plan-glow: rgba(96, 165, 250, 0.15);
+}
+
+.plan-enterprise {
+    --plan-color: #a855f7;
+    --plan-glow: rgba(168, 85, 247, 0.2);
+}
+
+.demo-iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 12px;
+}
