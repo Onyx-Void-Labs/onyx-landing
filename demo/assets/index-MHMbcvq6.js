@@ -1,0 +1,1 @@
+import{i as t,a6 as o}from"./index-CFhynXdJ.js";async function r(a){return await t("plugin:oauth|start",{config:a})}async function u(a){await t("plugin:oauth|cancel",{port:a})}function l(a){return o("oauth://url",n=>{a(n.payload)})}function c(a){return o("oauth://invalid-url",n=>{a(n.payload)})}export{u as cancel,c as onInvalidUrl,l as onUrl,r as start};
