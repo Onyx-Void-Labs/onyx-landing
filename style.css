@@ -16,7 +16,7 @@
     --cyan: #06b6d4;
     --text: #fafafa;
     --text-secondary: #a1a1aa;
-    --text-muted: #52525b;
+    --text-muted: #71717a;
     --border: rgba(255, 255, 255, 0.04);
     --border-hover: rgba(255, 255, 255, 0.08);
     --radius: 16px;
@@ -969,7 +969,7 @@ nav.scrolled .nav-cta {
     color: var(--purple);
 }
 
-.tl-content h4 {
+.tl-content h3 {
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 6px;
@@ -1031,7 +1031,7 @@ footer {
     transform: translateY(-2px);
 }
 
-.footer-col h4 {
+.footer-col h3 {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 1px;
