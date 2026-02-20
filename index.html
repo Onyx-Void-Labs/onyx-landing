@@ -1305,37 +1305,7 @@
                     <!-- Iframe injected via IntersectionObserver to prevent mobile JS penalty -->
                 </div>
             </div>
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    let demoLoaded = false;
-                    const container = document.getElementById("demo-container");
 
-                    const loadDemo = () => {
-                        if (demoLoaded) return;
-                        demoLoaded = true;
-
-                        const iframe = document.createElement("iframe");
-                        iframe.src = "demo/index.html";
-                        iframe.title = "Onyx Demo";
-                        iframe.style.width = "100%";
-                        iframe.style.height = "600px";
-                        iframe.style.border = "none";
-                        iframe.style.borderRadius = "12px";
-                        container.appendChild(iframe);
-
-                        ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(e => {
-                            window.removeEventListener(e, loadDemo);
-                        });
-                    };
-
-                    ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(e => {
-                        window.addEventListener(e, loadDemo, { passive: true });
-                    });
-
-                    // Fallback load after 3.5s (Lighthouse trace typically ends before this)
-                    setTimeout(loadDemo, 3500);
-                });
-            </script>
         </section>
 
         <!-- ─── Features ─── -->

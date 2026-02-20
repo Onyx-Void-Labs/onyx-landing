@@ -212,6 +212,35 @@
         });
     }
 
+    // ─── Deferred Demo Loader ───
+    function setupDemoLoader() {
+        let demoLoaded = false;
+        const container = document.getElementById("demo-container");
+        if (!container) return;
+
+        const loadDemo = () => {
+            if (demoLoaded) return;
+            demoLoaded = true;
+
+            const iframe = document.createElement("iframe");
+            iframe.src = "demo/index.html";
+            iframe.title = "Onyx Demo";
+            iframe.style.width = "100%";
+            iframe.style.height = "600px";
+            iframe.style.border = "none";
+            iframe.style.borderRadius = "12px";
+            container.appendChild(iframe);
+
+            ['mousemove', 'touchstart', 'keydown', 'click'].forEach(e => {
+                window.removeEventListener(e, loadDemo);
+            });
+        };
+
+        ['mousemove', 'touchstart', 'keydown', 'click'].forEach(e => {
+            window.addEventListener(e, loadDemo, { passive: true });
+        });
+    }
+
     // ─── Init ───
     document.addEventListener('DOMContentLoaded', () => {
         setupDownloads();
@@ -221,5 +250,6 @@
         setupMobileNav();
         setupPreviewTabs();
         setupSmoothScroll();
+        setupDemoLoader();
     });
 })();
