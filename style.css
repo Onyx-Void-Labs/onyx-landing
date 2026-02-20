@@ -2,6 +2,14 @@
    ONYX Design System
    ─────────────────────────────────────────────── */
 
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('./assets/fonts/inter-v13-latin-regular.woff2') format('woff2');
+}
+
 :root {
     --bg: #030304;
     --bg-card: #0a0a0c;
