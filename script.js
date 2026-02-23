@@ -214,28 +214,23 @@
 
     // ─── Deferred Demo Loader ───
     function setupDemoLoader() {
-        let demoLoaded = false;
         const container = document.getElementById("demo-container");
         if (!container) return;
 
-        const loadDemo = () => {
-            if (demoLoaded) return;
-            demoLoaded = true;
-
-            const iframe = document.createElement("iframe");
-            iframe.src = "demo/index.html";
-            iframe.title = "Onyx Demo";
-            iframe.className = "demo-iframe";
-            container.appendChild(iframe);
-
-            ['mousemove', 'touchstart', 'keydown', 'click'].forEach(e => {
-                window.removeEventListener(e, loadDemo);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = document.createElement("iframe");
+                    iframe.src = "demo/index.html";
+                    iframe.title = "Onyx Demo";
+                    iframe.className = "demo-iframe";
+                    container.appendChild(iframe);
+                    observer.unobserve(container);
+                }
             });
-        };
+        }, { rootMargin: '200px' }); // Load when within 200px of viewport
 
-        ['mousemove', 'touchstart', 'keydown', 'click'].forEach(e => {
-            window.addEventListener(e, loadDemo, { passive: true });
-        });
+        observer.observe(container);
     }
 
     // ─── Init ───
