@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — ONYX</title>
+    <meta name="description" content="Terms of Service for ONYX, the end-to-end encrypted notes app and vault by Onyx Void Labs.">
+    <link rel="canonical" href="https://onyxvoid.com/terms">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="preload" href="assets/fonts/inter-v13-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-page { max-width: 800px; margin: 0 auto; padding: 140px 24px 80px; }
+        .legal-page h1 { font-size: 2.5rem; margin-bottom: 8px; }
+        .legal-page .effective-date { color: var(--text-muted); margin-bottom: 48px; font-size: 0.95rem; }
+        .legal-page h2 { font-size: 1.35rem; margin-top: 48px; margin-bottom: 16px; color: var(--text); }
+        .legal-page h3 { font-size: 1.1rem; margin-top: 28px; margin-bottom: 12px; color: var(--text); }
+        .legal-page p, .legal-page li { color: var(--text-secondary); line-height: 1.8; margin-bottom: 12px; }
+        .legal-page ul, .legal-page ol { padding-left: 24px; margin-bottom: 16px; }
+        .legal-page li { margin-bottom: 8px; }
+        .legal-page a { color: var(--purple); text-decoration: none; }
+        .legal-page a:hover { text-decoration: underline; }
+        .legal-page table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; }
+        .legal-page th, .legal-page td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.95rem; }
+        .legal-page th { color: var(--text); font-weight: 600; }
+        .legal-page .highlight-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 24px; margin: 24px 0; }
+        .legal-page .highlight-box p { margin-bottom: 0; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Ambient glow -->
+    <div class="ambient" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo">ONYX<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="/#features">Features</a>
+                <a href="/#security">Security</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="https://github.com/Onyx-Void-Labs/onyx" target="_blank" rel="noopener">Source</a>
+            </div>
+            <a href="/#hero" class="btn btn-sm btn-primary nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <main>
+        <article class="legal-page">
+            <h1>Terms of Service</h1>
+            <p class="effective-date">Effective Date: February 28, 2026</p>
+
+            <div class="highlight-box">
+                <p><strong>Summary —</strong> ONYX is open-source, end-to-end encrypted software. You own your data. We provide the service as-is. These terms govern your use of the ONYX application and associated cloud services.</p>
+            </div>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By downloading, installing, or using ONYX ("the Application") or any services provided by Onyx Void Labs ("we", "us", "our"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the Application.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>ONYX is a local-first, end-to-end encrypted productivity application that includes:</p>
+            <ul>
+                <li>An encrypted notes editor with rich text, Markdown, and code support</li>
+                <li>An encrypted password vault</li>
+                <li>A calendar and task management system</li>
+                <li>Flashcards with spaced repetition</li>
+                <li>Encrypted cloud sync (optional)</li>
+                <li>Encrypted file and photo storage (optional)</li>
+                <li>LAN-based peer-to-peer device sync</li>
+                <li>An embedded email client</li>
+            </ul>
+            <p>The Application operates primarily on your local device. Cloud features are optional and all cloud-stored data is encrypted on your device before transmission.</p>
+
+            <h2>3. Open Source License</h2>
+            <p>ONYX's source code is released under the <a href="https://github.com/Onyx-Void-Labs/onyx/blob/main/LICENSE" target="_blank" rel="noopener">GNU General Public License v3.0 (GPL-3.0)</a>. These Terms of Service govern your use of the hosted service and cloud infrastructure provided by Onyx Void Labs. The GPL-3.0 license continues to apply to the source code itself.</p>
+
+            <h2>4. Accounts and Authentication</h2>
+            <h3>4.1 Account Creation</h3>
+            <p>To use cloud features, you must create an account. You may sign up using:</p>
+            <ul>
+                <li>Email and password</li>
+                <li>A passkey (FIDO2/WebAuthn)</li>
+                <li>Google OAuth</li>
+                <li>Magic link or one-time passcode (OTP)</li>
+            </ul>
+            <p>Your email address is hashed on your device before being sent to our servers — we never store or see your plaintext email address.</p>
+
+            <h3>4.2 Account Security</h3>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Maintaining the confidentiality of your password and recovery phrase</li>
+                <li>Safeguarding your master key and recovery key (BIP-39 mnemonic phrase)</li>
+                <li>All activity that occurs under your account</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Important:</strong> Due to our zero-knowledge architecture, we <strong>cannot</strong> reset your password or recover your data if you lose both your password and recovery phrase. You are solely responsible for storing your recovery phrase securely.</p>
+            </div>
+
+            <h2>5. Your Data and Privacy</h2>
+            <h3>5.1 Ownership</h3>
+            <p>You retain full ownership of all content you create, store, or transmit using ONYX. We claim no intellectual property rights over your data.</p>
+
+            <h3>5.2 Zero-Knowledge Encryption</h3>
+            <p>All your content is encrypted end-to-end with AES-256-GCM on your device. We cannot access, read, or decrypt your data. Our servers store only encrypted ciphertext.</p>
+
+            <h3>5.3 Privacy</h3>
+            <p>Your use of ONYX is also governed by our <a href="/privacy">Privacy Policy</a>, which details what minimal data we collect and how it is handled.</p>
+
+            <h2>6. Subscriptions and Payments</h2>
+            <h3>6.1 Plans</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Price (AUD/month)</th>
+                        <th>Cloud Storage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Starter</td>
+                        <td>Free</td>
+                        <td>1 GB</td>
+                    </tr>
+                    <tr>
+                        <td>Basic</td>
+                        <td>$1</td>
+                        <td>25 GB</td>
+                    </tr>
+                    <tr>
+                        <td>Pro</td>
+                        <td>$2</td>
+                        <td>50 GB</td>
+                    </tr>
+                    <tr>
+                        <td>Ultra</td>
+                        <td>$3</td>
+                        <td>200 GB</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>6.2 Payment Processing</h3>
+            <p>All payments are processed by <strong>Stripe</strong>. We never handle, store, or have access to your raw payment card information. Stripe's services are subject to <a href="https://stripe.com/legal" target="_blank" rel="noopener">Stripe's Terms of Service</a> and <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+
+            <h3>6.3 Billing</h3>
+            <ul>
+                <li>Paid subscriptions are billed monthly on a recurring basis.</li>
+                <li>You may cancel your subscription at any time. Cancellation takes effect at the end of the current billing period.</li>
+                <li>Promotional codes may be applied at checkout where available.</li>
+                <li>Applicable taxes are calculated and collected automatically based on your location.</li>
+            </ul>
+
+            <h3>6.4 Refunds</h3>
+            <p>Given our low pricing and digital nature of the service, refunds are handled on a case-by-case basis. Contact <a href="mailto:contact@onyxvoid.com">contact@onyxvoid.com</a> for refund requests.</p>
+
+            <h2>7. Acceptable Use</h2>
+            <p>While we cannot see your encrypted content, you agree not to use ONYX to:</p>
+            <ul>
+                <li>Violate any applicable local, state, national, or international law</li>
+                <li>Distribute malware or engage in phishing attacks</li>
+                <li>Abuse the service infrastructure (e.g., denial-of-service attacks, excessive automated account creation)</li>
+                <li>Attempt to circumvent security measures, access other users' accounts, or interfere with the service</li>
+                <li>Use the service to facilitate any activity that would constitute a criminal offense</li>
+            </ul>
+            <p>We reserve the right to suspend or terminate accounts that violate these terms or engage in abuse of our infrastructure.</p>
+
+            <h2>8. Intellectual Property</h2>
+            <p>The ONYX name, logo, and branding are trademarks of Onyx Void Labs. The application source code is licensed under GPL-3.0. Third-party libraries and dependencies are subject to their respective licenses.</p>
+
+            <h2>9. Third-Party Services</h2>
+            <p>ONYX integrates with third-party services that are subject to their own terms:</p>
+            <ul>
+                <li><strong>Google OAuth</strong>: Subject to <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Google's Terms of Service</a></li>
+                <li><strong>Microsoft Outlook</strong> (embedded email): Subject to <a href="https://www.microsoft.com/en-us/servicesagreement" target="_blank" rel="noopener">Microsoft's Services Agreement</a></li>
+                <li><strong>Stripe</strong> (payments): Subject to <a href="https://stripe.com/legal" target="_blank" rel="noopener">Stripe's Terms</a></li>
+            </ul>
+            <p>We are not responsible for the practices, content, or availability of third-party services.</p>
+
+            <h2>10. Disclaimers</h2>
+            <h3>10.1 Service Provided "As-Is"</h3>
+            <p>ONYX is provided on an <strong>"as-is"</strong> and <strong>"as-available"</strong> basis without warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+
+            <h3>10.2 No Guarantee of Availability</h3>
+            <p>We do not guarantee uninterrupted access to cloud sync or other server-dependent features. The Application is designed to work offline, and cloud features are supplementary.</p>
+
+            <h3>10.3 Data Loss</h3>
+            <p>Due to our zero-knowledge architecture, <strong>we cannot recover your data</strong> if you lose your password and recovery phrase. You are responsible for backing up your recovery phrase and, optionally, exporting your data as Markdown files.</p>
+
+            <h2>11. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by applicable law, Onyx Void Labs shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:</p>
+            <ul>
+                <li>Your use of or inability to use the Application</li>
+                <li>Loss of data due to lost encryption keys, passwords, or recovery phrases</li>
+                <li>Any unauthorized access to or alteration of your encrypted data</li>
+                <li>Any interruption or cessation of the service</li>
+            </ul>
+
+            <h2>12. Account Termination</h2>
+            <ul>
+                <li>You may delete your account at any time through the Application. This will remove all server-side data associated with your account.</li>
+                <li>We may suspend or terminate your account if you violate these Terms or engage in abusive behavior.</li>
+                <li>Upon termination, your encrypted server-side data will be deleted. Local data on your device is unaffected.</li>
+            </ul>
+
+            <h2>13. Changes to These Terms</h2>
+            <p>We may update these Terms from time to time. Material changes will be communicated by updating the "Effective Date" at the top of this page and, where feasible, through the Application. Your continued use of ONYX after changes constitutes acceptance of the revised Terms.</p>
+
+            <h2>14. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of Australia, without regard to its conflict of law provisions.</p>
+
+            <h2>15. Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will remain in full force and effect.</p>
+
+            <h2>16. Contact Us</h2>
+            <p>If you have any questions about these Terms of Service, please contact us:</p>
+            <ul>
+                <li>Email: <a href="mailto:contact@onyxvoid.com">contact@onyxvoid.com</a></li>
+                <li>GitHub: <a href="https://github.com/Onyx-Void-Labs/onyx/issues" target="_blank" rel="noopener">Open an issue</a></li>
+            </ul>
+        </article>
+    </main>
+
+    <!-- ─── Footer ─── -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo">ONYX<span class="dot">.</span></span>
+                <p>Your thoughts. Encrypted. Private.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <a href="mailto:contact@onyxvoid.com">contact@onyxvoid.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Onyx Void Labs &mdash; Open Source GPL-3.0.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

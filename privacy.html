@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — ONYX</title>
+    <meta name="description" content="Privacy Policy for ONYX, the end-to-end encrypted notes app and vault by Onyx Void Labs.">
+    <link rel="canonical" href="https://onyxvoid.com/privacy">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="preload" href="assets/fonts/inter-v13-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-page { max-width: 800px; margin: 0 auto; padding: 140px 24px 80px; }
+        .legal-page h1 { font-size: 2.5rem; margin-bottom: 8px; }
+        .legal-page .effective-date { color: var(--text-muted); margin-bottom: 48px; font-size: 0.95rem; }
+        .legal-page h2 { font-size: 1.35rem; margin-top: 48px; margin-bottom: 16px; color: var(--text); }
+        .legal-page h3 { font-size: 1.1rem; margin-top: 28px; margin-bottom: 12px; color: var(--text); }
+        .legal-page p, .legal-page li { color: var(--text-secondary); line-height: 1.8; margin-bottom: 12px; }
+        .legal-page ul, .legal-page ol { padding-left: 24px; margin-bottom: 16px; }
+        .legal-page li { margin-bottom: 8px; }
+        .legal-page a { color: var(--purple); text-decoration: none; }
+        .legal-page a:hover { text-decoration: underline; }
+        .legal-page table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; }
+        .legal-page th, .legal-page td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.95rem; }
+        .legal-page th { color: var(--text); font-weight: 600; }
+        .legal-page .highlight-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 24px; margin: 24px 0; }
+        .legal-page .highlight-box p { margin-bottom: 0; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Ambient glow -->
+    <div class="ambient" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo">ONYX<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="/#features">Features</a>
+                <a href="/#security">Security</a>
+                <a href="/#pricing">Pricing</a>
+                <a href="https://github.com/Onyx-Void-Labs/onyx" target="_blank" rel="noopener">Source</a>
+            </div>
+            <a href="/#hero" class="btn btn-sm btn-primary nav-cta">Download</a>
+        </div>
+    </nav>
+
+    <main>
+        <article class="legal-page">
+            <h1>Privacy Policy</h1>
+            <p class="effective-date">Effective Date: February 28, 2026</p>
+
+            <div class="highlight-box">
+                <p><strong>TL;DR —</strong> ONYX is built on a zero-knowledge architecture. Your data is encrypted end-to-end on your device before it ever leaves. We cannot read your notes, passwords, files, or any content — even if compelled to. We collect the bare minimum needed to operate the service.</p>
+            </div>
+
+            <h2>1. Who We Are</h2>
+            <p>ONYX is developed and operated by <strong>Onyx Void Labs</strong> ("we", "us", "our"). Our website is <a href="https://onyxvoid.com">onyxvoid.com</a> and you can reach us at <a href="mailto:contact@onyxvoid.com">contact@onyxvoid.com</a>.</p>
+            <p>ONYX is open-source software licensed under the GNU General Public License v3.0 (GPL-3.0). The full source code is publicly available for audit on <a href="https://github.com/Onyx-Void-Labs/onyx" target="_blank" rel="noopener">GitHub</a>.</p>
+
+            <h2>2. Our Core Privacy Principle: Zero-Knowledge Architecture</h2>
+            <p>ONYX is designed so that <strong>we never have access to your plaintext data</strong>. All encryption and decryption happens exclusively on your device using:</p>
+            <ul>
+                <li><strong>AES-256-GCM</strong> authenticated encryption for all content</li>
+                <li><strong>PBKDF2</strong> with SHA-256 and 100,000 iterations for key derivation</li>
+                <li>Cryptographically random 16-byte salts and 12-byte IVs per operation</li>
+                <li>Browser-native <strong>Web Crypto API</strong> (no third-party cryptography libraries)</li>
+            </ul>
+            <p>Your master key is generated on your device, wrapped (encrypted) with your password, and never transmitted in plaintext. Even if our servers are compromised, your data remains unreadable.</p>
+
+            <h2>3. What Data We Collect</h2>
+
+            <h3>3.1 Account Information</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>How It's Handled</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Email address</td>
+                        <td>SHA-256 hashed with a secret pepper on your device before transmission. The server only receives and stores a pseudonymous hashed identifier — <strong>never your real email</strong>.</td>
+                        <td>Authentication (identity blinding)</td>
+                    </tr>
+                    <tr>
+                        <td>Display name &amp; avatar</td>
+                        <td>Encrypted with AES-256-GCM on your device before upload. The server stores only ciphertext.</td>
+                        <td>Profile display (client-side only)</td>
+                    </tr>
+                    <tr>
+                        <td>Passkey credentials</td>
+                        <td>WebAuthn public keys and credential IDs are stored server-side. Passkey labels are encrypted client-side.</td>
+                        <td>Passwordless authentication (FIDO2/WebAuthn)</td>
+                    </tr>
+                    <tr>
+                        <td>Authentication tokens</td>
+                        <td>Magic link and OTP tokens are hashed before storage. Time-limited and marked as used after verification.</td>
+                        <td>Passwordless sign-in (magic link, OTP)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3.2 Device Information</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>How It's Handled</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Device fingerprint</td>
+                        <td>A probabilistic browser-derived hash generated by the open-source FingerprintJS library. Runs entirely on your device — <strong>no data is sent to FingerprintJS servers</strong>. This is not a unique identifier and cannot be used to track you across sites.</td>
+                        <td>Anti-abuse during account creation (rate limiting)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3.3 Your Content</h3>
+            <p>All user-created content — including notes, password vault entries, files, calendar events, flashcards, and photos — is:</p>
+            <ul>
+                <li><strong>Stored primarily on your device</strong> in IndexedDB (local browser/app storage)</li>
+                <li><strong>Encrypted end-to-end</strong> with AES-256-GCM before any cloud sync</li>
+                <li><strong>Never readable by us</strong> — the server stores only opaque ciphertext blobs</li>
+            </ul>
+            <p>Cloud sync is <strong>optional</strong>. ONYX works fully offline without any server connection.</p>
+
+            <h3>3.4 What We Do NOT Collect</h3>
+            <ul>
+                <li>No analytics or telemetry (telemetry is disabled by default; no analytics SDKs are integrated)</li>
+                <li>No tracking pixels, cookies for advertising, or ad networks</li>
+                <li>No IP address logging on our sync relay servers</li>
+                <li>No usage behavior tracking</li>
+                <li>No selling or sharing of any data with third parties for advertising</li>
+            </ul>
+
+            <h2>4. How We Use Your Data</h2>
+            <p>The limited data we collect is used exclusively to:</p>
+            <ul>
+                <li>Authenticate you and maintain your session</li>
+                <li>Sync your encrypted data between your devices (when you opt in to cloud sync)</li>
+                <li>Process subscription payments via Stripe</li>
+                <li>Prevent abuse (e.g., mass account creation)</li>
+                <li>Provide account recovery via encrypted recovery keys</li>
+            </ul>
+
+            <h2>5. Third-Party Services</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Purpose</th>
+                        <th>Data Shared</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Stripe</strong></td>
+                        <td>Payment processing for subscriptions</td>
+                        <td>Your pseudonymous account identifier and payment details. Stripe handles all payment data in accordance with PCI DSS. ONYX never stores or processes raw payment card data.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google OAuth</strong></td>
+                        <td>Optional sign-in method</td>
+                        <td>Standard OAuth2 flow — only the profile information you consent to share with Google is received.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft Outlook</strong> (embedded)</td>
+                        <td>Optional email client feature</td>
+                        <td>Your Microsoft credentials are entered directly into Microsoft's embedded web interface. ONYX does not intercept, store, or have access to your Microsoft credentials.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cloudflare DNS</strong></td>
+                        <td>Email provider detection (MX lookups)</td>
+                        <td>Domain names only — no personal data.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>We do <strong>not</strong> use any analytics services (no Google Analytics, no Mixpanel, no Sentry, no PostHog, or similar).</p>
+
+            <h2>6. Data Storage and Security</h2>
+            <h3>6.1 On Your Device (Primary)</h3>
+            <ul>
+                <li><strong>IndexedDB</strong>: Notes (as Yjs CRDT documents), calendar events, version history, password vault cache</li>
+                <li><strong>localStorage</strong>: Settings, preferences, workspace state (never sent to any server)</li>
+                <li><strong>sessionStorage</strong>: Temporary session keys (cleared when you close the tab/app)</li>
+                <li><strong>Local filesystem</strong> (desktop app): Optional Markdown mirror of your notes</li>
+            </ul>
+
+            <h3>6.2 On Our Servers (Optional, Encrypted)</h3>
+            <ul>
+                <li><strong>PocketBase</strong> (self-hosted): Encrypted user records, encrypted vault entries, hashed auth tokens, passkey credentials</li>
+                <li><strong>Hocuspocus</strong> (self-hosted): Encrypted Yjs document blobs for real-time sync — a stateless relay that stores only ciphertext</li>
+            </ul>
+            <p>All server infrastructure is self-hosted and operated by Onyx Void Labs. We do not use shared cloud hosting providers for your encrypted data.</p>
+
+            <h3>6.3 Peer-to-Peer Sync</h3>
+            <p>ONYX supports optional LAN-based peer-to-peer sync between your devices on the same local network. P2P sync transmits encrypted payloads directly between your devices without passing through any server.</p>
+
+            <h2>7. Data Retention and Deletion</h2>
+            <ul>
+                <li>Your local data remains on your device until you choose to delete it.</li>
+                <li>You can delete your account at any time, which will remove all server-side data associated with your account.</li>
+                <li>Version history snapshots (up to 50 per note) are stored locally in IndexedDB and can be cleared by you at any time.</li>
+                <li>Since we cannot read your data, we cannot selectively retain any content — deletion is complete and irreversible.</li>
+            </ul>
+
+            <h2>8. Your Rights</h2>
+            <p>Depending on your jurisdiction, you may have the following rights:</p>
+            <ul>
+                <li><strong>Access</strong>: You can access all your data directly in the app — it's stored on your device.</li>
+                <li><strong>Portability</strong>: You can export your notes as Markdown files at any time.</li>
+                <li><strong>Deletion</strong>: You can delete your account and all associated server-side data.</li>
+                <li><strong>Rectification</strong>: You can update your profile information at any time within the app.</li>
+            </ul>
+            <p>Because of our zero-knowledge design, we cannot access your data to fulfill data access requests — you already have direct access to everything on your device.</p>
+
+            <h2>9. Children's Privacy</h2>
+            <p>ONYX is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, please contact us at <a href="mailto:contact@onyxvoid.com">contact@onyxvoid.com</a> and we will delete the account.</p>
+
+            <h2>10. Open Source Transparency</h2>
+            <p>ONYX is fully open-source under the GPL-3.0 license. You can <a href="https://github.com/Onyx-Void-Labs/onyx" target="_blank" rel="noopener">audit the entire codebase</a> to verify every claim in this privacy policy. Our encryption implementation, data handling, and network requests are all publicly reviewable.</p>
+
+            <h2>11. Changes to This Policy</h2>
+            <p>If we make material changes to this Privacy Policy, we will update the "Effective Date" at the top and notify users through the app or our website. Continued use of ONYX after changes constitutes acceptance of the revised policy.</p>
+
+            <h2>12. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+            <ul>
+                <li>Email: <a href="mailto:contact@onyxvoid.com">contact@onyxvoid.com</a></li>
+                <li>GitHub: <a href="https://github.com/Onyx-Void-Labs/onyx/issues" target="_blank" rel="noopener">Open an issue</a></li>
+            </ul>
+        </article>
+    </main>
+
+    <!-- ─── Footer ─── -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo">ONYX<span class="dot">.</span></span>
+                <p>Your thoughts. Encrypted. Private.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <a href="mailto:contact@onyxvoid.com">contact@onyxvoid.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Onyx Void Labs &mdash; Open Source GPL-3.0.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
